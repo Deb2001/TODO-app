@@ -2,8 +2,7 @@ from tkinter import *
 import json
 
 class Add_data():
-
-    def add(self, date, title, desc):   
+    def add(self,date,title,desc):   
         new_data={
                 date:{
                 "title":title,
