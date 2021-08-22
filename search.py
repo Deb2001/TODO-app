@@ -24,9 +24,3 @@ class Find():
                 messagebox.showinfo(title="Error",message="No such todo exist")
         
 
-
-    win=Tk()
-    win.title("MAIN")
-    button=Button(text="Search", command=search)
-    button.pack()
-    win.mainloop()
