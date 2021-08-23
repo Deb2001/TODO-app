@@ -17,7 +17,7 @@ class Find():
             if date in data:
                 title=data[date]["title"]
                 description=data[date]["description"]
-                messagebox.showinfo(title=date, message=f"Tile:{title}\nDescription:{description}")
+                messagebox.showinfo(title=date, message=f"Tile: {title}\nDescription: {description}")
                 
 
             else:

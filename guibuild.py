@@ -1,7 +1,10 @@
 from tkinter import *
 from add import Add_data
+from search import Find
 
 add=Add_data()
+search=Find()
+
 window=Tk()
 window.title("TODO")
 window.config(padx=40,pady=40)
@@ -37,23 +40,22 @@ search_entry= Entry(width=10)
 search_entry.grid(row=4, column=2)
 search_entry.insert(0, "22.08.2021")
  
-def test():
+def on_add():
     global date_entry
     global title_entry
     global description_entry
-    date=date_entry.get()
-    title=title_entry.get()
-    desc=description_entry.get()
     add.add(date_entry.get(),title_entry.get(),description_entry.get())
     
-
+def on_search():
+    global search_entry
+    search.search(search_entry.get())
 
 # Buttons
-add_button = Button(text="Add to TODO List", width=13,command=test)
+add_button = Button(text="Add to TODO List", width=13,command=on_add)
 add_button.grid(row=4, column=0)
 display_button = Button(text="Display today's TODO List")
 display_button.grid(row=4, column=1)
-search_button = Button(text="🔍", width=2)
+search_button = Button(text="🔍", width=2,command=on_search)
 search_button.grid(row=4, column=3)
 
 window.mainloop()
