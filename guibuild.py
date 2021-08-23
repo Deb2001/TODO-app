@@ -26,7 +26,7 @@ canvas.create_image(60,60,image=logo)
 canvas.grid(row=0,column=1,padx=30,pady=40)
 
 #Labels
-info_label=Label(text="Create TODOS. Manage TODOS.\nAll at one place!",bg=BLUE,fg="dark blue",width=25,font=("Roboto",11,"bold"))
+info_label=Label(text="Create TODOS. Manage TODOS.\nAll at one place!",bg=BLUE,fg="white",width=25,font=("Roboto",11,"bold"))
 info_label.grid(row=1,column=1)
 date_label=Label(text="Date:",bg=BLUE,fg="white",width=15,font=("Arial",9,"bold"))
 date_label.grid(row=2,column=0)
