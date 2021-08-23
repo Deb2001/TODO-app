@@ -53,6 +53,9 @@ def on_add():
     global title_entry
     global description_entry
     add.add(date_entry.get(),title_entry.get(),description_entry.get())
+    title_entry.delete(0,END)
+    description_entry.delete(0,END)
+
     
 def on_search():
     global search_entry
