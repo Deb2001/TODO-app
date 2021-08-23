@@ -4,11 +4,13 @@ import json
 class Add_data():
     def add(self,date,title,desc):   
         new_data={
-                date:{
+                date:[{
                 "title":title,
                 "description":desc,
-                }
+                }]
             }
+        if date in new_data:
+            new_data[date].append({"title":title,"description":desc})    
         try:
             with open("data.json", "r") as file:
                 #Reading old data
