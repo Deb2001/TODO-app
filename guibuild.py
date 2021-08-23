@@ -11,41 +11,43 @@ search=Find()
 
 window=Tk()
 window.title("TODO")
-window.config(padx=20,pady=40)
+window.config(padx=20,pady=30)
 
 #background
 bg = PhotoImage(file = "background.png")
 bg_label = Label(window, image = bg)
-bg_label.place(x = -100, y =-50)
+bg_label.place(x = -80, y =-40)
 
 
 #logo import
 canvas=Canvas(height=120,width=120,highlightthickness=0)
 logo=PhotoImage(file="Todo logo.png")
 canvas.create_image(60,60,image=logo)
-canvas.grid(row=0,column=1,padx=30,pady=60)
+canvas.grid(row=0,column=1,padx=30,pady=40)
 
 #Labels
-date_label=Label(text="Date:",bg=BLUE,fg="white")
-date_label.grid(row=1,column=0)
-title_label=Label(text="Title:",bg=BLUE,fg="white")
-title_label.grid(row=2,column=0)
-description_label=Label(text="Description:",bg=BLUE,fg="white")
-description_label.grid(row=3,column=0)
-search_label=Label(text="Search TODO by date:",bg=BLUE,fg="white")
-search_label.grid(row=4, column=1)
+info_label=Label(text="Create TODOS. Manage TODOS.\nAll at one place!",bg=BLUE,fg="dark blue",width=25,font=("Roboto",11,"bold"))
+info_label.grid(row=1,column=1)
+date_label=Label(text="Date:",bg=BLUE,fg="white",width=15,font=("Arial",9,"bold"))
+date_label.grid(row=2,column=0)
+title_label=Label(text="Title:",bg=BLUE,fg="white",width=15,font=("Arial",9,"bold"))
+title_label.grid(row=3,column=0)
+description_label=Label(text="Description:",bg=BLUE,fg="white",width=15,font=("Arial",9,"bold"))
+description_label.grid(row=4,column=0)
+search_label=Label(text="Search TODO by date:",bg=BLUE,fg="white",width=23,font=("Arial",9,"bold"))
+search_label.grid(row=5, column=1)
 
 
 #Entries
-date_entry = Entry(width=48)
-date_entry.grid(row=1, column=1, columnspan=3,pady=10)
+date_entry = Entry(width=55)
+date_entry.grid(row=2, column=1, columnspan=3,pady=10)
 date_entry.insert(0, "22.08.2021")
-title_entry = Entry(width=48)
-title_entry.grid(row=2, column=1, columnspan=3,pady=10)
-description_entry = Entry(width=48)
-description_entry.grid(row=3, column=1, columnspan=3,pady=10)
+title_entry = Entry(width=55)
+title_entry.grid(row=3, column=1, columnspan=3,pady=10)
+description_entry = Entry(width=55)
+description_entry.grid(row=4, column=1, columnspan=3,pady=10)
 search_entry= Entry(width=12)
-search_entry.grid(row=4, column=2)
+search_entry.grid(row=5, column=2)
 search_entry.insert(0, "22.08.2021")
  
 def on_add():
@@ -62,9 +64,9 @@ def on_search():
     search.search(search_entry.get())
 
 # Buttons
-add_button = Button(text="Add to TODO List", width=16,command=on_add,fg="white",bg="dark blue")
-add_button.grid(row=4, column=0)
+add_button = Button(text="Add to TODO List", width=15,command=on_add,fg="white",bg="dark blue",font=("Arial",9,"bold"))
+add_button.grid(row=5, column=0)
 search_button = Button(text="🔍", width=2,command=on_search,fg="white",bg="dark blue")
-search_button.grid(row=4, column=3)
+search_button.grid(row=5, column=3)
 
 window.mainloop()
